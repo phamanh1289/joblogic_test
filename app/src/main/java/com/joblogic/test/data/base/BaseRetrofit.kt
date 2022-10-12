@@ -1,9 +1,9 @@
 package com.joblogic.test.data.base
 
 import android.app.Application
-import com.example.data.BuildConfig
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
+import com.joblogic.test.BuildConfig
 import okhttp3.Authenticator
 import okhttp3.Cache
 import okhttp3.Interceptor
@@ -35,9 +35,7 @@ abstract class BaseRetrofit(application: Application) {
             builder.addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
         Retrofit.Builder()
             .baseUrl(requestBaseUrl()).client(builder.build())
-            //add adapter coroutine
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
-            //add Gson parser
             .addConverterFactory(
                 GsonConverterFactory.create(
                     GsonBuilder()
