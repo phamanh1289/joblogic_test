@@ -1,6 +1,6 @@
 package com.joblogic.test.data.base
 
-interface BaseMapper<E, M> {
-    fun fromModel(data: E): M?
-    fun toModel(data: M): E?
+interface BaseMapper<L, R> {
+    fun fromModel(data: L): R
+    fun toModel(data: R): L
 }

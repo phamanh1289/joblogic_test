@@ -8,4 +8,5 @@
     <string name="title_number">Number</string>
     <string name="title_price">Price</string>
     <string name="title_quantity">Quantity</string>
+    <string name="title_empty">List Empty</string>
 </resources>

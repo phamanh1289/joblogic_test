@@ -10,7 +10,7 @@ interface ItemDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(items: List<ItemEntity>)
 
-    @Query("SELECT * FROM ${AppRoomTable.TABLE_ITEM}")
+    @Query("SELECT * FROM ${AppRoomTable.TABLE_ITEM_TO_SELL}")
     suspend fun getItems(): List<ItemEntity>?
 
 }

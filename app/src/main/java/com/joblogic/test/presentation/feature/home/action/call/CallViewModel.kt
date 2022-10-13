@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 
 class CallViewModel(private val callUseCase: CallUseCase) : BaseViewModel() {
-    val _listItem = MutableSharedFlow<List<UserResponse>>(replay = 1)
+    private val _listItem = MutableSharedFlow<List<UserResponse>>(replay = 1)
     val listItem = _listItem.asSharedFlow()
 
     init {

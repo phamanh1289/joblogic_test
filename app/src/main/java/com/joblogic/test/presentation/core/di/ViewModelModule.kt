@@ -6,13 +6,14 @@ import com.joblogic.test.presentation.feature.home.action.ActionViewModel
 import com.joblogic.test.presentation.feature.home.action.buy.BuyViewModel
 import com.joblogic.test.presentation.feature.home.action.call.CallViewModel
 import com.joblogic.test.presentation.feature.home.action.sell.SellViewModel
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val viewModelModule = module {
-    single { MainViewModel() }
-    single { BackStackViewModel() }
-    single { ActionViewModel() }
-    single { CallViewModel(get()) }
-    single { SellViewModel(get()) }
-    single { BuyViewModel(get()) }
+    viewModel { MainViewModel() }
+    viewModel { BackStackViewModel() }
+    viewModel { ActionViewModel() }
+    viewModel { CallViewModel(get()) }
+    viewModel { SellViewModel(get()) }
+    viewModel { BuyViewModel(get(), get()) }
 }
