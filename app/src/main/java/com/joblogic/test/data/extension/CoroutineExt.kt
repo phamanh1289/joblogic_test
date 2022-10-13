@@ -8,22 +8,18 @@ fun <T> CoroutineScope.asyncDataRemote(
     onSuccess: (T) -> Unit,
     onError: (Throwable?) -> Unit
 ) {
-    launch(Dispatchers.IO) {
+    launch(Dispatchers.Main) {
         try {
             apiDeferred.await().run {
                 when {
                     isSuccessful -> body()?.let { onSuccess(it) }
                     else ->
                         onError(
-                            when (code()) {
-//                                ErrorEnum.TOKEN_EXPIRED.code -> ErrorResponse.TokenExpired()
-                                else -> Throwable(
-                                    "${code()} - ${
-                                        if (errorBody() != null) errorBody()?.string() else
-                                            message()
-                                    }"
-                                )
-                            }
+                            Throwable(
+                                "${code()} - ${
+                                    if (errorBody() != null) errorBody()?.string() else message()
+                                }"
+                            )
                         )
                 }
             }

@@ -25,7 +25,7 @@ open class BaseRepoImp {
         onSuccess: (T) -> Unit,
         onError: (Throwable?) -> Unit
     ) {
-        CoroutineScope(Dispatchers.IO).asyncDataRemote(
+        CoroutineScope(Dispatchers.Main).asyncDataRemote(
             apiDeferred,
             onSuccess = { onSuccess(it) },
             onError = { onError(it) },
