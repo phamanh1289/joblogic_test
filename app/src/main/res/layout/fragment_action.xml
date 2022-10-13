@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="frgAction"
+            type="com.joblogic.test.presentation.feature.home.action.ActionFragment" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/item_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_16sdp"
+            android:onClick="@{()->frgAction.onClickAction(frgAction.ACTION_CALL)}"
+            app:titleAction="@{@string/call_list}" />
+
+        <include
+            layout="@layout/item_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_16sdp"
+            android:onClick="@{()->frgAction.onClickAction(frgAction.ACTION_BUY)}"
+            app:titleAction="@{@string/buy_list}" />
+
+        <include
+            layout="@layout/item_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_16sdp"
+            android:onClick="@{()->frgAction.onClickAction(frgAction.ACTION_SELL)}"
+            app:titleAction="@{@string/sell_list}" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

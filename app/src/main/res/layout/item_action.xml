@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="titleAction"
+            type="String" />
+    </data>
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_border_round_black"
+        android:gravity="center"
+        android:text="@{titleAction}"
+        android:padding="@dimen/_8sdp"
+        tools:text="Item action">
+
+    </TextView>
+</layout>

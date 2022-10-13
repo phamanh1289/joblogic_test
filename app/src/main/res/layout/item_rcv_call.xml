@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="userResponse"
+            type="com.joblogic.test.domain.model.response.UserResponse" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/item_rcv_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8sdp"
+            app:contentItem="@{userResponse.name}"
+            app:titleItem="@{@string/title_name}" />
+
+        <include
+            layout="@layout/item_rcv_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8sdp"
+            app:contentItem="@{userResponse.number}"
+            app:titleItem="@{@string/title_number}" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@color/grey" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
