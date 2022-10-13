@@ -1,17 +1,18 @@
 package com.joblogic.test.data.remote.api
 
+import com.joblogic.test.data.base.BaseResponse
+import com.joblogic.test.domain.model.response.ItemResponse
+import com.joblogic.test.domain.model.response.UserResponse
+import kotlinx.coroutines.Deferred
+import retrofit2.Response
+import retrofit2.http.GET
+
 
 interface MainApi {
 
-//    @POST("console/admin/initialize")
-//    fun postSignInAsync(@Body body: SignInRequest): Deferred<Response<BaseModelResponse<TokenResponse>>>
-//
-//    @POST("console/admin/refresh-token")
-//    fun postRefreshTokenAsync(@Body body: HashMap<String, String>): Deferred<Response<BaseModelResponse<TokenResponse>>>
-//
-//    @GET("console/admin/info")
-//    fun getUserInfoAsync(): Deferred<Response<BaseModelResponse<DataUserResponse>>>
-//
-//    @GET("authentication/token/new/")
-//    fun getAuthenticationAsync(@Query("api_key") apiKey: String): Deferred<Response<BaseModelResponse<TokenResponse>>>
+    @GET("imkhan334/demo-1/call")
+    fun getCallAsync(): Deferred<Response<List<UserResponse>>>
+
+    @GET("imkhan334/demo-1/buy")
+    fun getBuyAsync(): Deferred<Response<List<ItemResponse>>>
 }

@@ -1,16 +1,16 @@
-package com.example.data.local.database
+package com.joblogic.test.data.local.database
 
 import android.app.Application
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.data.local.database.dao.ExampleDao
-import com.example.data.local.database.entity.ExampleEntity
-import com.example.data.other.DataConstants.Companion.DATABASE_NAME
+import com.joblogic.test.data.local.database.dao.ItemDao
+import com.joblogic.test.data.local.database.entity.ItemEntity
+import com.joblogic.test.data.other.constant.DataConstants.Companion.DATABASE_NAME
 
-@Database(entities = [ExampleEntity::class], version = 1, exportSchema = false)
+@Database(entities = [ItemEntity::class], version = 1, exportSchema = false)
 abstract class AppRoomDatabase : RoomDatabase() {
-    abstract fun createExampleDao(): ExampleDao
+    abstract fun createItemDao(): ItemDao
 }
 
 fun createDB(application: Application) = Room.databaseBuilder(
@@ -18,4 +18,4 @@ fun createDB(application: Application) = Room.databaseBuilder(
     AppRoomDatabase::class.java, DATABASE_NAME
 ).fallbackToDestructiveMigration().build()
 
-fun createExampleDao(db: AppRoomDatabase) = db.createExampleDao()
+fun createItemDao(db: AppRoomDatabase) = db.createItemDao()

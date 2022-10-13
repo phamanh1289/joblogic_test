@@ -1,13 +1,12 @@
 package com.joblogic.test.data.remote.provider
 
+import com.joblogic.test.data.remote.api.MainApi
+import com.joblogic.test.data.remote.retofit.MainRetrofit
+
 class Providers {
-//    companion object {
-//        fun exampleProvide(retrofit: MainRetrofit): MainApi {
-//            return retrofit.retrofit.create(MainApi::class.java)
-//        }
-//
-//        fun otherProvider(otherProvider: OtherRetrofit): OtherApi {
-//            return otherProvider.retrofit.create(OtherApi::class.java)
-//        }
-//    }
+    companion object {
+        fun mainProvider(otherProvider: MainRetrofit): MainApi {
+            return otherProvider.retrofit.create(MainApi::class.java)
+        }
+    }
 }

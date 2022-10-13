@@ -1,7 +1,7 @@
-package com.example.data.local.database
+package com.joblogic.test.data.local.database
 
 class AppRoomTable {
     companion object{
-        const val TABLE_EXAMPLE = "example"
+        const val TABLE_ITEM = "tableItem"
     }
 }

@@ -1,4 +1,7 @@
 package com.joblogic.test.presentation.feature.home
 
-class MainViewModel {
+import com.joblogic.test.presentation.core.base.BaseViewModel
+
+class MainViewModel : BaseViewModel(){
+
 }
