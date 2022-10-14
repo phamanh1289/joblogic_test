@@ -34,7 +34,7 @@ class MainRepoImpl(
     override fun insertItemSell(
         listItem: List<ItemResponse>, onError: (Throwable?) -> Unit
     ) {
-        asyncDataLocal(
+        asyncDatabase(
             query = {
                 listItem.map {
                     ItemMapper().fromModel(it)
@@ -48,7 +48,7 @@ class MainRepoImpl(
     override fun getItemSell(
         onSuccess: (List<ItemResponse>) -> Unit, onError: (Throwable?) -> Unit
     ) {
-        asyncDataLocal(
+        asyncDatabase(
             query = {
                 itemDao.getItems()?.map {
                     ItemMapper().toModel(it)

@@ -8,7 +8,7 @@ fun <T> CoroutineScope.asyncDataRemote(
     onSuccess: (T) -> Unit,
     onError: (Throwable?) -> Unit
 ) {
-    launch(Dispatchers.Main) {
+    launch {
         try {
             apiDeferred.await().run {
                 when {
@@ -30,13 +30,12 @@ fun <T> CoroutineScope.asyncDataRemote(
 }
 
 fun CoroutineScope.asyncDatabase(
-    query: suspend CoroutineScope.(Int) -> Unit,
+    query: suspend CoroutineScope.() -> Unit,
     onError: (Throwable?) -> Unit
 ): Job {
-
     return launch {
         try {
-            query(1)
+            query()
         } catch (e: Exception) {
             onError(e)
         }

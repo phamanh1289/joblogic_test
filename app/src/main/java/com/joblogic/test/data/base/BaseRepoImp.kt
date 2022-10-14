@@ -10,11 +10,11 @@ import retrofit2.Response
 
 open class BaseRepoImp {
 
-    fun asyncDataLocal(
-        query: suspend CoroutineScope.(Int) -> Unit,
+    fun asyncDatabase(
+        query: suspend CoroutineScope.() -> Unit,
         onError: (Throwable?) -> Unit
     ): Job {
-        return CoroutineScope(Dispatchers.Default).asyncDatabase(
+        return CoroutineScope(Dispatchers.IO).asyncDatabase(
             query,
             onError = { onError(it) }
         )
@@ -25,7 +25,7 @@ open class BaseRepoImp {
         onSuccess: (T) -> Unit,
         onError: (Throwable?) -> Unit
     ) {
-        CoroutineScope(Dispatchers.Main).asyncDataRemote(
+        CoroutineScope(Dispatchers.IO).asyncDataRemote(
             apiDeferred,
             onSuccess = { onSuccess(it) },
             onError = { onError(it) },

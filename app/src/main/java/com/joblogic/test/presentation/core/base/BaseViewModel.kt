@@ -2,7 +2,6 @@ package com.joblogic.test.presentation.core.base
 
 import androidx.annotation.CallSuper
 import androidx.lifecycle.ViewModel
-import com.joblogic.test.presentation.helper.enum.ErrorType
 import com.joblogic.test.presentation.model.ErrorModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -24,11 +23,8 @@ open class BaseViewModel : ViewModel() {
         _onLoading.value = false
     }
 
-    private fun setError(exception: String?, errorType: ErrorType = ErrorType.OTHER) {
-        _onError.value = ErrorModel(
-            message = exception ?: "",
-            errorType = errorType
-        )
+    private fun setError(exception: String?) {
+        _onError.value = ErrorModel(message = exception ?: "")
     }
 
     fun getError(e: Throwable?) {

@@ -47,10 +47,6 @@ abstract class BaseRetrofit(application: Application) {
     val retrofit: Retrofit
         get() = _retrofit
 
-    fun addTokenAuthenticator(tokenHolder: Authenticator) = apply {
-        builder.authenticator(tokenHolder)
-    }
-
     fun addInterceptors(interceptor: Interceptor) = apply {
         builder.addInterceptor(interceptor)
     }

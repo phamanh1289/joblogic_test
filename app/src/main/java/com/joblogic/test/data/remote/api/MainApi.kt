@@ -1,6 +1,5 @@
 package com.joblogic.test.data.remote.api
 
-import com.joblogic.test.data.base.BaseResponse
 import com.joblogic.test.domain.model.response.ItemResponse
 import com.joblogic.test.domain.model.response.UserResponse
 import kotlinx.coroutines.Deferred

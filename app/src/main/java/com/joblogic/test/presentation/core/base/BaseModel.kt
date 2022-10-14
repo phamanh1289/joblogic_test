@@ -1,4 +1,5 @@
 package com.joblogic.test.presentation.core.base
 
-open class BaseModel {
-}
+import java.io.Serializable
+
+open class BaseModel : Serializable

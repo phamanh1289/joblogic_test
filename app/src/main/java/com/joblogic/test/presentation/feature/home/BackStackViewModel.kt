@@ -10,10 +10,6 @@ class BackStackViewModel : BaseViewModel() {
     val countBack: StateFlow<Int>
         get() = _countBack
 
-    fun clearCountBack() {
-        _countBack.value = 0
-    }
-
     fun addCountBack() {
         _countBack.update { it.inc() }
     }
