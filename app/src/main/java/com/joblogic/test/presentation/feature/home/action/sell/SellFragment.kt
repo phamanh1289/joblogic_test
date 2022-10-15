@@ -1,11 +1,11 @@
 package com.joblogic.test.presentation.feature.home.action.sell
 
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.joblogic.test.BR
 import com.joblogic.test.R
 import com.joblogic.test.databinding.FragmentSellBinding
 import com.joblogic.test.presentation.core.base.BaseFragment
+import com.joblogic.test.presentation.helper.extension.initAdapter
 import com.joblogic.test.presentation.helper.extension.showToast
 import com.joblogic.test.presentation.other.adapter.BuyAdapter
 import kotlinx.coroutines.CoroutineScope
@@ -41,11 +41,7 @@ class SellFragment : BaseFragment<FragmentSellBinding, SellViewModel>() {
     }
 
     private fun initRcvItem() {
-        binding.frgSellRcvItem.apply {
-            layoutManager = LinearLayoutManager(requireContext())
-            adapter = sellAdapter
-            setHasFixedSize(true)
-        }
+        binding.frgSellRcvItem.initAdapter(sellAdapter)
     }
 
     private fun handleOnClickItem(index: Int) {

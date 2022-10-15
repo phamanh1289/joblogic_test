@@ -1,11 +1,11 @@
 package com.joblogic.test.presentation.feature.home.action.buy
 
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.joblogic.test.BR
 import com.joblogic.test.R
 import com.joblogic.test.databinding.FragmentBuyBinding
 import com.joblogic.test.presentation.core.base.BaseFragment
+import com.joblogic.test.presentation.helper.extension.initAdapter
 import com.joblogic.test.presentation.helper.extension.showToast
 import com.joblogic.test.presentation.other.adapter.BuyAdapter
 import kotlinx.coroutines.CoroutineScope
@@ -40,11 +40,7 @@ class BuyFragment : BaseFragment<FragmentBuyBinding, BuyViewModel>() {
     }
 
     private fun initRcvItem() {
-        binding.frgBuyRcvItem.apply {
-            layoutManager = LinearLayoutManager(requireContext())
-            adapter = buyAdapter
-            setHasFixedSize(true)
-        }
+        binding.frgBuyRcvItem.initAdapter(buyAdapter)
     }
 
     private fun handleOnClickItem(index: Int) {
